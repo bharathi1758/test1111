@@ -2,6 +2,7 @@ connection: "bigquery"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/bussiness_pulse.dashboard.lookml"
 
 datagroup: test1111_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -16,7 +17,7 @@ explore: test {}
 
 explore: sales {
   join: orders {
-    type: left_outer 
+    type: left_outer
     sql_on: ${sales.order_id} = ${orders.order_id} ;;
     relationship: many_to_one
   }
@@ -35,4 +36,3 @@ explore: test_error_records {
 }
 
 explore: orders {}
-
