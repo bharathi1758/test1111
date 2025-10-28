@@ -36,3 +36,4 @@ explore: test_error_records {
 }
 
 explore: orders {}
+explore: custom_sql {}
