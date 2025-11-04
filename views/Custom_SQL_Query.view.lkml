@@ -95,7 +95,7 @@ view: Custom_SQL_Query {
     type: number
     sql: ${TABLE}.profit ;;
   }
-  dimension: Profit_Ratio {
+  measure: Profit_Ratio {
     label: "Profit Ratio"
     type: number
     sql: SUM(${profit}) / NULLIF(SUM(${sales}), 0);;
@@ -103,11 +103,10 @@ view: Custom_SQL_Query {
   dimension: Category_Group {
     label: "Category Group"
     type: string
-    sql:
-    CASE ${category}
-    WHEN 'Furniture' THEN 'Non Tech'
-    WHEN 'Office Supplies' THEN 'Non Tech'
-    WHEN 'Technology' THEN 'Tech'
-    END ;;
+    sql: CASE ${category}
+          WHEN 'Furniture' THEN 'Non Tech'
+          WHEN 'Office Supplies' THEN 'Non Tech'
+          WHEN 'Technology' THEN 'Tech'
+          END ;;
   }
 }
