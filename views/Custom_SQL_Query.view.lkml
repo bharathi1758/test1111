@@ -99,6 +99,7 @@ view: Custom_SQL_Query {
     label: "Profit Ratio"
     type: number
     sql: SUM(${profit}) / NULLIF(SUM(${sales}), 0);;
+    #value_format_name: "percent_0"
   }
   dimension: Category_Group {
     label: "Category Group"
