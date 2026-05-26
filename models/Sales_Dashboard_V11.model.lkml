@@ -11,5 +11,6 @@ explore: orders_super{
     relationship: one_to_many
   }
 }
+#explore: hr_employe_1 {}
 
 explore: Custom_SQL_Query {}
