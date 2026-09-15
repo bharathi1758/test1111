@@ -31,4 +31,5 @@ view: orders_super {
     type: number
     sql: ${TABLE}.Quantity ;;
   }
+
 }

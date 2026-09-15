@@ -36,4 +36,17 @@ view: sales_super {
     type: number
     sql: ${TABLE}.Profit ;;
   }
+    measure: total_sales {
+      label: "Total Sales"
+      type: sum
+      sql: ${TABLE}.Sales ;;
+
+      drill_fields: [
+        Order_ID,
+        Customer_Name,
+        Product_Name,
+        Category,
+        Sub_Category
+      ]
+  }
 }
